@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.15</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.geotools</groupId>
+    <artifactId>windrose</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>11</java.version>
+        <geotools.version>21.5</geotools.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.geotools/gt-main -->
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-main</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>gt-shapefile</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>gt-swing</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>gt-grid</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>gt-csv</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>netcdf.grib</groupId>
+            <artifactId>grib2</artifactId>
+            <version>4.6.13</version>
+        </dependency>
+    </dependencies>
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>maven2-repository.dev.java.net</id>-->
+<!--            <name>Java.net repository</name>-->
+<!--            <url>http://download.java.net/maven/2</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>osgeo</id>-->
+<!--            <name>Open Source Geospatial Foundation Repository</name>-->
+<!--            <url>http://download.osgeo.org/webdav/geotools/</url>-->
+<!--        </repository>-->
+
+<!--        <repository>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <id>boundless</id>-->
+<!--            <name>Boundless Maven Repository</name>-->
+<!--            <url>http://repo.boundlessgeo.com/main</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>osgeo-snapshot</id>-->
+<!--            <name>OSGeo Snapshot Repository</name>-->
+<!--            <url>https://repo.osgeo.org/repository/snapshot/</url>-->
+<!--            <snapshots><enabled>true</enabled></snapshots>-->
+<!--            <releases><enabled>false</enabled></releases>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+    <repositories>
+        <repository>
+            <id>osgeo</id>
+            <name>OSGeo Release Repository</name>
+            <url>https://repo.osgeo.org/repository/release/</url>
+            <snapshots><enabled>false</enabled></snapshots>
+            <releases><enabled>true</enabled></releases>
+        </repository>
+
+<!--        <repository>-->
+<!--            <id>maven2-repository.dev.java.net</id>-->
+<!--            <name>Java.net repository</name>-->
+<!--            <url>http://download.java.net/maven/2</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>osgeo</id>-->
+<!--            <name>Open Source Geospatial Foundation Repository</name>-->
+<!--            <url>http://download.osgeo.org/webdav/geotools/</url>-->
+<!--        </repository>-->
+
+<!--        <repository>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <id>boundless</id>-->
+<!--            <name>Boundless Maven Repository</name>-->
+<!--            <url>http://repo.boundlessgeo.com/main</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>osgeo-snapshot</id>-->
+<!--            <name>OSGeo Snapshot Repository</name>-->
+<!--            <url>https://repo.osgeo.org/repository/snapshot/</url>-->
+<!--            <snapshots><enabled>true</enabled></snapshots>-->
+<!--            <releases><enabled>false</enabled></releases>-->
+<!--        </repository>-->
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
